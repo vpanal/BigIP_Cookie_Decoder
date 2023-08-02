@@ -71,7 +71,7 @@ elif args.cookie:
         name, cookie_value = "Cookie", args.cookie
     decode_cookie(name, cookie_value)
 else:
-    print("Introduce la cookie:")
+    print("Introduce una cookie en el formato Nombre:1677787402.36895.0000 o 1677787402.36895.0000.")
     cookie_string = input().strip()
     if ':' in cookie_string:
         name, _, cookie_value = cookie_string.partition(':')
