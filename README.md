@@ -120,6 +120,10 @@ srv5-10.1.1.100:8080
 
 Este script requiere Python 3 y el módulo `argparse`.
 
+## Referencias
+
+- [Overview of BIG-IP Persistence Cookie Encoding](https://my.f5.com/manage/s/article/K6917)
+
 ## Autores
 
 - [vpanal](https://github.com/vpanal): Pentester.
