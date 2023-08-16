@@ -1,82 +1,83 @@
 # BigIP_Cookie_Decoder
 
-Este script decodifica cookies de BigIP en el formato `Nombre:1677787402.36895.0000` o `1677787402.36895.0000` y muestra la dirección IP y el puerto resultantes.
+This script decodes BigIP cookies in the format `Name:1677787402.36895.0000` or `1677787402.36895.0000` and displays the resulting IP address and port.
 
-## Instalación
+## Installation
 
-Para instalar este proyecto, sigue los siguientes pasos:
+To install this project, follow these steps:
 
-1. Clona el repositorio desde GitHub utilizando el siguiente comando:
+1. Clone the repository from GitHub using the following command:
 
 ```bash
 git clone http://github.com/vpanal/BigIP_Cookie_Decoder
 ```
 
-2. Navega al directorio del proyecto:
+2. Navigate to the project directory:
 
 ```bash
 cd BigIP_Cookie_Decoder
 ```
 
-3. Instala las dependencias requeridas utilizando `pip` y el archivo `requirements.txt`:
+3. Install the required dependencies using `pip` and the `requirements.txt` file:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Una vez completados estos pasos, el proyecto estará listo para ser utilizado. Si estás utilizando un entorno virtual, asegúrate de activarlo antes de ejecutar el comando `pip install`. Si no tienes `git` instalado, puedes descargar el código del repositorio en formato ZIP desde el enlace: http://github.com/vpanal/BigIP_Cookie_Decoder/archive/main.zip
-## Uso
+Once these steps are completed, the project will be ready to use. If you're using a virtual environment, make sure to activate it before running the `pip install` command. If you don't have `git` installed, you can download the repository code in ZIP format from the link: http://github.com/vpanal/BigIP_Cookie_Decoder/archive/main.zip
 
-Puedes usar este script de cuatro formas diferentes:
+## Usage
 
-1. **Modo interactivo una sola cookie:** Ejecuta el script sin argumentos (`python bigip_decoder.py`) para ingresar las cookies manualmente. El programa le pedirá que introduzca una cookie en el formato `Nombre:1677787402.36895.0000` o `1677787402.36895.0000`. El script finalizara al decodificarla.
+You can use this script in four different ways:
 
-2. **Modo interactivo:** Ejecuta la opcion `--interactive`. El programa le pedirá que introduzca una cookie en el formato `Nombre:1677787402.36895.0000` o `1677787402.36895.0000`. Escribe "quit" o "exit" para salir del modo interactivo.
+1. **Interactive mode for a single cookie:** Run the script without arguments (`python bigip_decoder.py`) to manually input cookies. The program will prompt you to enter a cookie in the format `Name:1677787402.36895.0000` or `1677787402.36895.0000`. The script will decode it and terminate.
 
-3. **Proporcionar una sola cookie:** Utiliza la opción `-c` o `--cookie` para proporcionar una sola cookie directamente en la línea de comandos.
+2. **Interactive mode:** Run the `--interactive` option. The program will prompt you to enter a cookie in the format `Name:1677787402.36895.0000` or `1677787402.36895.0000`. Enter "quit" or "exit" to exit the interactive mode.
 
-   Ejemplo:
+3. **Provide a single cookie:** Use the `-c` or `--cookie` option to directly provide a single cookie in the command line.
+
+   Example:
    ```
-   python bigip_decoder.py -c Nombre:1677787402.36895.0000
+   python bigip_decoder.py -c Name:1677787402.36895.0000
    ```
 
-4. **Leer cookies desde un archivo:** Utiliza la opción `-i` o `--input-file` para proporcionar un archivo que contenga cookies en el formato `Nombre:1677787402.36895.0000` o `1677787402.36895.0000`.
+4. **Read cookies from a file:** Use the `-i` or `--input-file` option to provide a file containing cookies in the format `Name:1677787402.36895.0000` or `1677787402.36895.0000`.
 
-   Ejemplo:
+   Example:
    ```
    python bigip_decoder.py -i input.txt
    ```
 
-## Ejemplos
+## Examples
 
-### Ejemplo 1: Modo interactivo una sola Cookie
+### Example 1: Interactive mode for a single Cookie
 
-Ejecuta el script sin argumentos (`python bigip_decoder.py`) para ingresar las cookies manualmente:
+Run the script without arguments (`python bigip_decoder.py`) to manually input cookies:
 
 ```
 python bigip_decoder.py
-Introduce una cookie en el formato Nombre:1677787402.36895.0000 o 1677787402.36895.0000.
-Introduce la cookie: lala:1677787402.36895.0000
+Enter a cookie in the format Name:1677787402.36895.0000 or 1677787402.36895.0000.
+Enter the cookie: lala:1677787402.36895.0000
 lala-10.1.1.100:8080
 ```
 
-### Ejemplo 2: Modo interactivo
+### Example 2: Interactive mode
 
-Utiliza la opción `--interactive` para ingresar las cookies manualmente desde el modo interactivo:
+Use the `--interactive` option to manually input cookies in interactive mode:
 
 ```
 python bigip_decoder.py --interactive
-Modo interactivo. Introduce una cookie en el formato Nombre:1677787402.36895.0000 o 1677787402.36895.0000, o escribe 'quit' o 'exit' para salir.
-Introduce la cookie: lala:1677787402.36895.0000
+Interactive mode. Enter a cookie in the format Name:1677787402.36895.0000 or 1677787402.36895.0000, or type 'quit' or 'exit' to exit.
+Enter the cookie: lala:1677787402.36895.0000
 lala-10.1.1.100:8080
-Introduce la cookie: 1677787402.36895.0000
+Enter the cookie: 1677787402.36895.0000
 Cookie-10.1.1.100:8080
-Introduce la cookie: quit
+Enter the cookie: quit
 ```
 
-### Ejemplo 3: Proporcionar una sola cookie
+### Example 3: Provide a single cookie
 
-Utiliza la opción `-c` o `--cookie` para proporcionar una sola cookie directamente en la línea de comandos:
+Use the `-c` or `--cookie` option to provide a single cookie directly in the command line:
 
 ```
 python bigip_decoder.py -c lala:1677787402.36895.0000
@@ -86,11 +87,11 @@ python bigip_decoder.py -c 1677787402.36895.0000
 Cookie-10.1.1.100:8080
 ```
 
-### Ejemplo 4: Leer cookies desde un archivo
+### Example 4: Read cookies from a file
 
-Utiliza la opción `-i` o `--input-file` para proporcionar un archivo que contenga cookies en el formato `Nombre:1677787402.36895.0000` o `1677787402.36895.0000`:
+Use the `-i` or `--input-file` option to provide a file containing cookies in the format `Name:1677787402.36895.0000` or `1677787402.36895.0000`:
 
-Contenido de `input.txt`:
+Contents of `input.txt`:
 ```
 srv1:1677787402.36895.0000
 srv2:1677787402.36895.0000
@@ -100,11 +101,11 @@ srv4:1677787402.36895.0000
 srv5:1677787402.36895.0000
 ```
 
-Ejecutar el script:
+Run the script:
 
 ```
 python bigip_decoder.py -i input.txt
---- IPs decodificadas ---
+--- Decoded IPs ---
 
 srv1-10.1.1.100:8080
 srv2-10.1.1.100:8080
@@ -116,18 +117,18 @@ srv5-10.1.1.100:8080
 --------------------------
 ```
 
-## Requisitos
+## Requirements
 
-Este script requiere Python 3 y el módulo `argparse`.
+This script requires Python 3 and the `argparse` module.
 
-## Referencias
+## References
 
 - [Overview of BIG-IP Persistence Cookie Encoding](https://my.f5.com/manage/s/article/K6917)
 
-## Autores
+## Authors
 
 - [vpanal](https://github.com/vpanal): Pentester.
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/deed.es). Puedes obtener más información en el archivo [LICENSE](LICENSE).
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/). You can find more information in the [LICENSE](LICENSE) file.
